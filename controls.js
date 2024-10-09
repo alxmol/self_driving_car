@@ -1,5 +1,6 @@
 class Controls{
     constructor(){
+        //initialize control inputs as false (not pressed)
         this.forward=false;
         this.left=false;
         this.right=false;
@@ -13,7 +14,7 @@ class Controls{
         /*same thing as funcction(event)
         but arrow is more convenient, accesses
         the constructor
-        */
+        */ //handle keys that are pressed
         document.onkeydown=(event)=>{
             switch(event.key){
                 case "ArrowUp":
@@ -32,9 +33,12 @@ class Controls{
                 case "s":
                     this.backwards = true;
                     break;
+                case " ":
+                    this.brake = true;
+                    break;
             }
-            console.table(this);
         }
+        //return when keys are released
         document.onkeyup=(event)=>{
             switch(event.key){
                 case "ArrowUp":
@@ -53,8 +57,10 @@ class Controls{
                 case "s":
                     this.backwards = false;
                     break;
+                case " ":
+                    this.brake = false;
+                    break;
             }
-            console.table(this);
         }
     }
 }
