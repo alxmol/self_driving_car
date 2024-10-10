@@ -47,7 +47,7 @@ class Car{
 
             if (this.useBrain) {
                 this.controls.forward = outputs[0];
-                this.controls.turn = outputs[1];
+                this.controls.left = outputs[1];
                 this.controls.right = outputs[2];
                 this.controls.backwards = outputs[3];
                 this.controls.brake = outputs[4];
