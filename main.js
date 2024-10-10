@@ -13,7 +13,7 @@ animate();
 
 function animate(){
     //update car position and control
-    car.update();
+    car.update(road.borders);
     //adjust canvas height based on window size
     canvas.height=window.innerHeight;
 
