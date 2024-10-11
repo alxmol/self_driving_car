@@ -158,10 +158,10 @@ class Car{
     }
 
 
-    draw(ctx, color){
+    draw(ctx, color, drawSensor=false){
         //draw car and sensor on canvas based on its angle and rotation
         if (this.damaged) {
-            ctx.fillStyle = "red";
+            ctx.fillStyle = "gray";
         }else{
             ctx.fillStyle = color;
         }
@@ -172,7 +172,7 @@ class Car{
         }
         ctx.fill();
 
-        if (this.sensor) {
+        if (this.sensor && drawSensor) {
             this.sensor.draw(ctx);
         }
     }
